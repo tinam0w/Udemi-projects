@@ -17,26 +17,13 @@ public class GradeService {
         this.gradeRepository = gradeRepository;
     }
 
-    public Grade getGrade(int index){
-        return gradeRepository.getGrade(index);
-    }
-
-    public void addGrade(Grade grade){
-        gradeRepository.addGrade(grade);
-    }
-
-    public void updateGrade(Grade grade, int index){
-        gradeRepository.updateGrade(grade, index);
-    }
-
-    public List<Grade> getGrades(){
-        return gradeRepository.getGrades();
-    }
-
     public Integer getGradeIndex(String id) {
         for (Grade studentGrade : getGrades()) {
             if (studentGrade.getId().equals(id)) return getGrades().indexOf(studentGrade);
         }
+//        for (int i = 0; i < getGrades().size(); i++) {
+//            if (getGrade(i).getId().equals(id)) return i;
+//        }
         return Constants.NOT_FOUND;
     }
 
@@ -53,5 +40,21 @@ public class GradeService {
         } else {
             updateGrade(grade, index);
         }
+    }
+
+    public Grade getGrade(int index){
+        return gradeRepository.getGrade(index);
+    }
+
+    public void addGrade(Grade grade){
+        gradeRepository.addGrade(grade);
+    }
+
+    public void updateGrade(Grade grade, int index){
+        gradeRepository.updateGrade(grade, index);
+    }
+
+    public List<Grade> getGrades(){
+        return gradeRepository.getGrades();
     }
 }
