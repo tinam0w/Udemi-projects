@@ -1,7 +1,7 @@
 package com.ltp.gradesubmission.web;
 
 import com.ltp.gradesubmission.service.serviceInterface.StudentService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,11 +16,11 @@ import com.ltp.gradesubmission.entity.Student;
 
 import java.util.List;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("/student")
 public class StudentController {
 
-    @Autowired
     StudentService studentService;
 
     @GetMapping("/{id}")
