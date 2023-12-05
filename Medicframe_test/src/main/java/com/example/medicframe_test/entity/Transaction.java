@@ -4,7 +4,6 @@ import com.example.medicframe_test.entity.enums.TransactionType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
 
 import java.math.BigDecimal;
 
@@ -12,33 +11,25 @@ import java.math.BigDecimal;
 @Table(name = "transactions")
 public class Transaction {
 
-    @NotBlank
-    @Column(name = "account_id", unique = true, nullable = false)
+    @Column(name = "account_id", nullable = false)
     private String accountId;
 
     @Id
-    @NotBlank
     @Column(name = "transaction_id", unique = true, nullable = false)
     private String transactionId;
 
     //identifies a group of transactions
     //SALE and REFUND would have the same orderId ???
-    @NotBlank
     @Column(name = "order_id", nullable = false)
     private String orderId;
 
-    @NotBlank
     @Enumerated(EnumType.STRING)
     @Column(name = "transaction_type", nullable = false)
     private TransactionType transactionType;
 
-    @NotBlank
     @Column(name = "amount", nullable = false)
     private BigDecimal amount;
 
-    @NotBlank
-    @Min(3)
-    @Max(3)
     @Column(name = "currency", nullable = false)
     private String currency;
 

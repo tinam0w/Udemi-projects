@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/account")
+@RequestMapping(value = "/account")
 public class AccountController {
 
     private final AccountService accountService;
@@ -17,7 +17,7 @@ public class AccountController {
         this.accountService = accountService;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}")
     public ResponseEntity<Double> getAccountBalanceById(@PathVariable String id) {
         return new ResponseEntity<>(accountService.getAccountBalanceById(id), HttpStatus.OK);
     }
