@@ -58,7 +58,7 @@ class MedicframeTestApplicationTests {
     @Test
     public void creditTransactionTest() {
         Account account = new Account("001", BigDecimal.TEN);
-        accountRepository.save(account);
+        //accountRepository.save(account);
 
         when(accountRepository.findById("001"))
                 .thenReturn(Optional.of(account));
