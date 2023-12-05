@@ -15,19 +15,19 @@ import java.util.Optional;
 public class AccountServiceImpl implements AccountService {
     private final AccountRepository accountRepository;
 
-    //for the sake of example:
-    private List<Account> accounts = Arrays.asList(
-            new Account("001"),
-            new Account("002"),
-            new Account("003")
-    );
-
     @Autowired
     public AccountServiceImpl(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
-        accountRepository.saveAll(accounts);
-    }
 
+        //for the sake of example:
+        List<Account> accounts = Arrays.asList(
+                new Account("001"),
+                new Account("002"),
+                new Account("003")
+        );
+        accountRepository.saveAll(accounts);
+
+    }
 
     @Override
     public Double getAccountBalanceById(String id) {

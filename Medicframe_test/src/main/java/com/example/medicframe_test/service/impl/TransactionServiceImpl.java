@@ -43,6 +43,7 @@ public class TransactionServiceImpl implements TransactionService {
             case REFUND, CREDIT -> account.setBalance(account.getBalance().subtract(transaction.getAmount()));
         }
 
+        accountRepository.save(account);
         return transactionRepository.save(transaction);
     }
 }

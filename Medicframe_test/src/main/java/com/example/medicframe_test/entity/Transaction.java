@@ -22,7 +22,7 @@ public class Transaction {
     private String transactionId;
 
     //identifies a group of transactions
-    // a SALE and REFUND would have the same orderId ???
+    //SALE and REFUND would have the same orderId ???
     @NotBlank
     @Column(name = "order_id", nullable = false)
     private String orderId;
@@ -46,6 +46,16 @@ public class Transaction {
     private String description;
 
     public Transaction() {
+    }
+
+    public Transaction(String accountId, String transactionId, String orderId, TransactionType transactionType, BigDecimal amount, String currency, String description) {
+        this.accountId = accountId;
+        this.transactionId = transactionId;
+        this.orderId = orderId;
+        this.transactionType = transactionType;
+        this.amount = amount;
+        this.currency = currency;
+        this.description = description;
     }
 
     public String getAccountId() {

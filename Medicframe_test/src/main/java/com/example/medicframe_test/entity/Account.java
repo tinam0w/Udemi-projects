@@ -27,6 +27,11 @@ public class Account {
         balance = BigDecimal.ZERO;
     }
 
+    public Account(String accountId, BigDecimal balance) {
+        this.accountId = accountId;
+        this.balance = balance;
+    }
+
     public String getAccountId() {
         return accountId;
     }
