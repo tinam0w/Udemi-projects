@@ -30,5 +30,6 @@ public class MedicframeTestApplication implements CommandLineRunner {
                 new Account("003")
         );
         accountRepository.saveAll(ACCOUNTS);
+
     }
 }

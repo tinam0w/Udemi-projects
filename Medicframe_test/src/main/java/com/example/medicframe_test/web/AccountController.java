@@ -2,6 +2,7 @@ package com.example.medicframe_test.web;
 
 import com.example.medicframe_test.service.AccountService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,6 +21,7 @@ public class AccountController {
     }
 
     @Operation(summary = "Get account balance", description = "Provides the balance of an account by id")
+    @ApiResponse(responseCode = "200", description = "Successful retrieval of contacts")
     @GetMapping(value = "account/{id}")
     public ResponseEntity<Double> getAccountBalanceById(@PathVariable String id) {
         return new ResponseEntity<>(accountService.getAccountBalanceById(id), HttpStatus.OK);

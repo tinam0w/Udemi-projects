@@ -1,19 +1,20 @@
 package com.example.medicframe_test.config;
 
-import io.swagger.v3.oas.models.OpenAPI;
-import io.swagger.v3.oas.models.info.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.*;
+
 @Configuration
 public class OpenApiConfig {
+
     @Bean
-    public OpenAPI openAPI(){
+    OpenAPI openAPI(){
         return new OpenAPI()
                 .info(new Info()
                         .title("MedicframeTest API")
                         .description("An API that can manage transactions to accounts")
                         .version("v1.0"));
-
     }
 }
