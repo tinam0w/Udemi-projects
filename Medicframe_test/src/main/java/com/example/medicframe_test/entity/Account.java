@@ -1,9 +1,7 @@
 package com.example.medicframe_test.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
 
@@ -12,19 +10,21 @@ import java.math.BigDecimal;
 public class Account {
 
     @Id
+    @NotNull
     @Column(name = "account_id", nullable = false, unique = true)
     private String accountId;
 
+    @NotNull
     @Column(name = "balance")
     private BigDecimal balance;
 
     public Account() {
-        balance = BigDecimal.ZERO;
+        this.balance = BigDecimal.ZERO;
     }
 
     public Account(String accountId) {
         this.accountId = accountId;
-        balance = BigDecimal.ZERO;
+        this.balance = BigDecimal.ZERO;
     }
 
     public Account(String accountId, BigDecimal balance) {

@@ -4,4 +4,5 @@ import com.example.medicframe_test.entity.Account;
 
 public interface AccountService{
     Double getAccountBalanceById(String id);
+    Account findById(String id);
 }
