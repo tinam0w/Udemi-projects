@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class TransactionController {
 
-    private final TransactionService service;
+    TransactionService service;
 
     @Autowired
     public TransactionController(TransactionService service) {

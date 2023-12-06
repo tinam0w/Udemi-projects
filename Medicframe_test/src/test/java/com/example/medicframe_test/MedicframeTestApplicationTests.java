@@ -55,8 +55,8 @@ public class MedicframeTestApplicationTests {
                 .thenReturn(Optional.of(account));
 
         Transaction transaction = new Transaction(
-                "001",
                 "asd",
+                "001",
                 "qwe",
                 TransactionType.SALE,
                 BigDecimal.TEN,
@@ -76,8 +76,8 @@ public class MedicframeTestApplicationTests {
                 .thenReturn(Optional.of(account));
 
         Transaction transaction = new Transaction(
-                "001",
                 "asd",
+                "001",
                 "qwe",
                 TransactionType.CREDIT,
                 BigDecimal.valueOf(3),

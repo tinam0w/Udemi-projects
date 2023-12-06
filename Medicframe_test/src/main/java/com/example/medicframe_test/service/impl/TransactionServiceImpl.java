@@ -13,8 +13,8 @@ import org.springframework.stereotype.Service;
 public class TransactionServiceImpl implements TransactionService {
 
 
-    private TransactionRepository transactionRepository;
-    private AccountService accountService;
+    TransactionRepository transactionRepository;
+    AccountService accountService;
 
     @Autowired
     public TransactionServiceImpl(TransactionRepository transactionRepository, AccountService accountService) {
